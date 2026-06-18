@@ -16,7 +16,6 @@
         </xs:documentation>
     </xs:annotation>
 
-    <!-- Design intent: GenreType uses a controlled vocabulary to improve consistency in genre description. -->
     <xs:simpleType name="GenreType">
         <xs:annotation>
             <xs:documentation>
@@ -30,7 +29,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Design intent: AnimationStyleType highlights the animation-specific characteristics of the film. -->
     <xs:simpleType name="AnimationStyleType">
         <xs:annotation>
             <xs:documentation>
@@ -47,7 +45,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Design intent: ThemeType supports thematic searching and research use. -->
     <xs:simpleType name="ThemeType">
         <xs:annotation>
             <xs:documentation>
@@ -76,92 +73,19 @@
 
         <xs:complexType>
             <xs:sequence>
-
-                <!-- Required because title is the primary access point for identifying the film. -->
-                <xs:element name="title" type="xs:string">
-                    <xs:annotation>
-                        <xs:documentation>Official title of the animated film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Repeatable because some films have more than one director. -->
-                <xs:element name="director" type="xs:string" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Director of the animated film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="date" type="xs:gYear">
-                    <xs:annotation>
-                        <xs:documentation>Release year of the animated film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Repeatable because a film can belong to more than one genre. -->
-                <xs:element name="genre" type="GenreType" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Genre category of the animated film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="description" type="xs:string" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>Short summary or description of the film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Animation-specific element added to distinguish this schema from general movie schemas. -->
-                <xs:element name="animationStyle" type="AnimationStyleType" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Visual or production style of animation.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="duration" type="xs:string">
-                    <xs:annotation>
-                        <xs:documentation>Running time of the film, preferably written in ISO 8601 duration format such as PT106M.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="inLanguage" type="xs:string" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Main language or languages used in the film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="theme" type="ThemeType" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Main theme or themes of the animated film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <xs:element name="productionCompany" type="xs:string" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Company or studio responsible for producing the film.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Added after feedback to represent the importance of music in animated films. -->
-                <xs:element name="musicDirector" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Person or group responsible for the film music or soundtrack.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Added after feedback to represent animation production roles more clearly. -->
-                <xs:element name="characterDesigner" type="xs:string" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation>Person responsible for character design.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
-                <!-- Optional relation element for sequels, series, franchises, or adapted works. -->
-                <xs:element name="isPartOf" type="xs:string" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>Series, franchise, or larger work that the film belongs to.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-
+                <xs:element name="title" type="xs:string"/>
+                <xs:element name="director" type="xs:string" maxOccurs="unbounded"/>
+                <xs:element name="date" type="xs:gYear"/>
+                <xs:element name="genre" type="GenreType" maxOccurs="unbounded"/>
+                <xs:element name="description" type="xs:string" minOccurs="0"/>
+                <xs:element name="animationStyle" type="AnimationStyleType" maxOccurs="unbounded"/>
+                <xs:element name="duration" type="xs:string"/>
+                <xs:element name="inLanguage" type="xs:string" maxOccurs="unbounded"/>
+                <xs:element name="theme" type="ThemeType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="productionCompany" type="xs:string" maxOccurs="unbounded"/>
+                <xs:element name="musicDirector" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="characterDesigner" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="isPartOf" type="xs:string" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
