@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<xs:schema
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://example.org/animation-schema"
     xmlns="http://example.org/animation-schema"
     elementFormDefault="qualified">
 
     <xs:annotation>
         <xs:documentation>
-            Animation Film Metadata Schema.
-            This schema is designed to describe animated films for discovery,
-            management, comparison, and research use. It combines general film
-            metadata elements with animation-specific elements such as animation
-            style, theme, music director, character designer, and series relation.
+            Animation Film Metadata Schema. This schema is designed to describe animated films for discovery,
+            management, comparison, and research use. It combines general film metadata elements with
+            animation-specific elements such as animation style, theme, music director, character designer,
+            and series relation.
         </xs:documentation>
     </xs:annotation>
 
+    <!-- Design intent: GenreType uses a controlled vocabulary to improve consistency in genre description. -->
     <xs:simpleType name="GenreType">
-        <xs:annotation>
-            <xs:documentation>
-                Controlled vocabulary for the main genre category of an animated film.
-            </xs:documentation>
-        </xs:annotation>
+        <xs:annotation><xs:documentation>Controlled vocabulary for the main genre category.</xs:documentation></xs:annotation>
         <xs:restriction base="xs:string">
             <xs:enumeration value="Fantasy"/>
             <xs:enumeration value="Adventure"/>
@@ -29,12 +23,9 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Design intent: AnimationStyleType highlights animation-specific visual characteristics. -->
     <xs:simpleType name="AnimationStyleType">
-        <xs:annotation>
-            <xs:documentation>
-                Controlled vocabulary for the visual or production style of animation.
-            </xs:documentation>
-        </xs:annotation>
+        <xs:annotation><xs:documentation>Controlled vocabulary for animation style.</xs:documentation></xs:annotation>
         <xs:restriction base="xs:string">
             <xs:enumeration value="Anime"/>
             <xs:enumeration value="2D Animation"/>
@@ -45,12 +36,9 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Design intent: ThemeType supports thematic searching and research use. -->
     <xs:simpleType name="ThemeType">
-        <xs:annotation>
-            <xs:documentation>
-                Controlled vocabulary for the main themes represented in the film.
-            </xs:documentation>
-        </xs:annotation>
+        <xs:annotation><xs:documentation>Controlled vocabulary for main themes.</xs:documentation></xs:annotation>
         <xs:restriction base="xs:string">
             <xs:enumeration value="Identity"/>
             <xs:enumeration value="Time Travel"/>
@@ -64,30 +52,30 @@
     </xs:simpleType>
 
     <xs:element name="animationFilm">
-        <xs:annotation>
-            <xs:documentation>
-                Root element for one animated film metadata record.
-                Each record describes one animated film as a complete work.
-            </xs:documentation>
-        </xs:annotation>
-
+        <xs:annotation><xs:documentation>Root element for one animated film metadata record.</xs:documentation></xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <!-- Required because title is the primary access point. -->
                 <xs:element name="title" type="xs:string"/>
+                <!-- Repeatable because some films have more than one director. -->
                 <xs:element name="director" type="xs:string" maxOccurs="unbounded"/>
                 <xs:element name="date" type="xs:gYear"/>
+                <!-- Repeatable because one film can belong to more than one genre. -->
                 <xs:element name="genre" type="GenreType" maxOccurs="unbounded"/>
                 <xs:element name="description" type="xs:string" minOccurs="0"/>
+                <!-- Animation-specific element added to distinguish this schema from general movie schemas. -->
                 <xs:element name="animationStyle" type="AnimationStyleType" maxOccurs="unbounded"/>
                 <xs:element name="duration" type="xs:string"/>
                 <xs:element name="inLanguage" type="xs:string" maxOccurs="unbounded"/>
                 <xs:element name="theme" type="ThemeType" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="productionCompany" type="xs:string" maxOccurs="unbounded"/>
+                <!-- Added after feedback to represent the importance of music in animated films. -->
                 <xs:element name="musicDirector" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <!-- Added after feedback to represent animation production roles more clearly. -->
                 <xs:element name="characterDesigner" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <!-- Optional relation element for sequels, series, franchises, or adapted works. -->
                 <xs:element name="isPartOf" type="xs:string" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-
 </xs:schema>

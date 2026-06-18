@@ -1,1 +1,1 @@
-Matadata version for GitHub Pages.
+Purple multi-page version. Upload all files to the repository root.

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<animationFilm
-    xmlns="http://example.org/animation-schema"
+<animationFilm xmlns="http://example.org/animation-schema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://example.org/animation-schema animation.xsd">
-
     <title>Spider-Man: Into the Spider-Verse</title>
     <director>Bob Persichetti</director>
     <director>Peter Ramsey</director>
@@ -20,5 +17,4 @@
     <theme>Courage</theme>
     <productionCompany>Sony Pictures Animation</productionCompany>
     <isPartOf>Spider-Verse Series</isPartOf>
-
 </animationFilm>

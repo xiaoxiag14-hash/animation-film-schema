@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<animationFilm
-    xmlns="http://example.org/animation-schema"
+<animationFilm xmlns="http://example.org/animation-schema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://example.org/animation-schema animation.xsd">
-
     <title>Spirited Away</title>
     <director>Hayao Miyazaki</director>
     <date>2001</date>
@@ -19,5 +16,4 @@
     <productionCompany>Studio Ghibli</productionCompany>
     <musicDirector>Joe Hisaishi</musicDirector>
     <characterDesigner>Hayao Miyazaki</characterDesigner>
-
 </animationFilm>
