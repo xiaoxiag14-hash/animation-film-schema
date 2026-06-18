@@ -1,1 +1,1 @@
-Cute bright version for GitHub Pages.
+Matadata version for GitHub Pages.
