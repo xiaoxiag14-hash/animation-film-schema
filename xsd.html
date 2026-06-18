@@ -1,16 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>XSD File</title><link rel="stylesheet" href="style.css"></head><body>
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>XSD 파일</title><link rel="stylesheet" href="style.css"></head><body>
 <header class="top"><div class="container topbar"><a class="logo" href="index.html">🌸 Animation Schema</a><nav class="nav">
-<a href="index.html">🏠 Home</a><a href="opening.html">🌷 Opening</a><a href="standards.html">📚 Standards</a><a href="vocabulary.html">📝 Vocabulary</a><a href="xsd.html">🧪 XSD</a><a href="samples.html">⭐ Samples</a>
+<a href="index.html">🏠 홈</a><a href="opening.html">🌷 Opening</a><a href="standards.html">📚 표준</a><a href="vocabulary.html">📝 어휘</a><a href="xsd.html">🧪 XSD</a><a href="samples.html">⭐ 예시</a>
 </nav></div></header>
-<main class="container"><section class="page-head"><div class="page-card"><span class="tag">🧪 Final Project Website</span><h1>XSD File</h1><p class="subtitle">Hosted XSD file with annotations and design-intent comments.</p></div></section><section class="section"><h2>🧪 Hosted XSD File</h2><p>The XSD file defines the structure of valid XML records. It includes element order, required or optional status, repeatability, data types, controlled vocabulary, xs:documentation, and design-intent comments.</p><div class="action-row"><a class="btn" href="animation.xsd" target="_blank">💖 Open Direct XSD File</a></div><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<main class="container"><section class="page-head"><div class="page-card"><span class="tag">🧪 최종 프로젝트 웹사이트</span><h1>XSD 파일</h1><p class="subtitle">주석과 설계 의도 설명이 포함된 XSD 파일입니다.</p></div></section><section class="section"><h2>🧪 호스팅된 XSD 파일</h2><p>XSD 파일은 XML 레코드가 따라야 하는 구조를 정의한다. 요소의 순서, 필수/선택 여부, 반복 가능 여부, 데이터 타입, 통제어휘, xs:documentation, 설계 의도 주석을 포함한다.</p><div class="action-row"><a class="btn" href="animation.xsd" target="_blank">💖 XSD 파일 열기</a></div><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
-    targetNamespace=&quot;http://example.org/animation-schema&quot;
+    target네임스페이스=&quot;http://example.org/animation-schema&quot;
     xmlns=&quot;http://example.org/animation-schema&quot;
     elementFormDefault=&quot;qualified&quot;&gt;
 
     &lt;xs:annotation&gt;
         &lt;xs:documentation&gt;
-            Animation Film Metadata Schema. This schema is designed to describe animated films for discovery,
+            애니메이션 영화 메타데이터 스키마. This schema is designed to describe animated films for discovery,
             management, comparison, and research use. It combines general film metadata elements with
             animation-specific elements such as animation style, theme, music director, character designer,
             and series relation.
@@ -27,8 +27,8 @@
         &lt;/xs:restriction&gt;
     &lt;/xs:simpleType&gt;
 
-    &lt;!-- Design intent: AnimationStyleType highlights animation-specific visual characteristics. --&gt;
-    &lt;xs:simpleType name=&quot;AnimationStyleType&quot;&gt;
+    &lt;!-- Design intent: Animation스타일Type highlights animation-specific visual characteristics. --&gt;
+    &lt;xs:simpleType name=&quot;Animation스타일Type&quot;&gt;
         &lt;xs:annotation&gt;&lt;xs:documentation&gt;Controlled vocabulary for animation style.&lt;/xs:documentation&gt;&lt;/xs:annotation&gt;
         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
             &lt;xs:enumeration value=&quot;Anime&quot;/&gt;
@@ -40,8 +40,8 @@
         &lt;/xs:restriction&gt;
     &lt;/xs:simpleType&gt;
 
-    &lt;!-- Design intent: ThemeType supports thematic searching and research use. --&gt;
-    &lt;xs:simpleType name=&quot;ThemeType&quot;&gt;
+    &lt;!-- Design intent: 주제Type supports thematic searching and research use. --&gt;
+    &lt;xs:simpleType name=&quot;주제Type&quot;&gt;
         &lt;xs:annotation&gt;&lt;xs:documentation&gt;Controlled vocabulary for main themes.&lt;/xs:documentation&gt;&lt;/xs:annotation&gt;
         &lt;xs:restriction base=&quot;xs:string&quot;&gt;
             &lt;xs:enumeration value=&quot;Identity&quot;/&gt;
@@ -55,23 +55,23 @@
         &lt;/xs:restriction&gt;
     &lt;/xs:simpleType&gt;
 
-    &lt;xs:element name=&quot;animationFilm&quot;&gt;
+    &lt;xs:element name=&quot;animation영화&quot;&gt;
         &lt;xs:annotation&gt;&lt;xs:documentation&gt;Root element for one animated film metadata record.&lt;/xs:documentation&gt;&lt;/xs:annotation&gt;
         &lt;xs:complexType&gt;
             &lt;xs:sequence&gt;
-                &lt;!-- Required because title is the primary access point. --&gt;
+                &lt;!-- 필수 여부 because title is the primary access point. --&gt;
                 &lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&gt;
-                &lt;!-- Repeatable because some films have more than one director. --&gt;
+                &lt;!-- 반복 가능 여부 because some films have more than one director. --&gt;
                 &lt;xs:element name=&quot;director&quot; type=&quot;xs:string&quot; maxOccurs=&quot;unbounded&quot;/&gt;
                 &lt;xs:element name=&quot;date&quot; type=&quot;xs:gYear&quot;/&gt;
-                &lt;!-- Repeatable because one film can belong to more than one genre. --&gt;
+                &lt;!-- 반복 가능 여부 because one film can belong to more than one genre. --&gt;
                 &lt;xs:element name=&quot;genre&quot; type=&quot;GenreType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
                 &lt;xs:element name=&quot;description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
                 &lt;!-- Animation-specific element added to distinguish this schema from general movie schemas. --&gt;
-                &lt;xs:element name=&quot;animationStyle&quot; type=&quot;AnimationStyleType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+                &lt;xs:element name=&quot;animation스타일&quot; type=&quot;Animation스타일Type&quot; maxOccurs=&quot;unbounded&quot;/&gt;
                 &lt;xs:element name=&quot;duration&quot; type=&quot;xs:string&quot;/&gt;
                 &lt;xs:element name=&quot;inLanguage&quot; type=&quot;xs:string&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-                &lt;xs:element name=&quot;theme&quot; type=&quot;ThemeType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+                &lt;xs:element name=&quot;theme&quot; type=&quot;주제Type&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
                 &lt;xs:element name=&quot;productionCompany&quot; type=&quot;xs:string&quot; maxOccurs=&quot;unbounded&quot;/&gt;
                 &lt;!-- Added after feedback to represent the importance of music in animated films. --&gt;
                 &lt;xs:element name=&quot;musicDirector&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
@@ -84,4 +84,4 @@
     &lt;/xs:element&gt;
 &lt;/xs:schema&gt;
 </code></pre></section></main>
-<footer class="footer">🌸 Animation Film Metadata Schema · Final Project Website 🌸</footer></body></html>
+<footer class="footer">🌸 애니메이션 영화 메타데이터 스키마 · 최종 프로젝트 웹사이트 🌸</footer></body></html>
