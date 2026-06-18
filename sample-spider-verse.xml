@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animationFilm
+    xmlns="http://example.org/animation-schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://example.org/animation-schema animation.xsd">
+
+    <title>Spider-Man: Into the Spider-Verse</title>
+    <director>Bob Persichetti</director>
+    <director>Peter Ramsey</director>
+    <director>Rodney Rothman</director>
+    <date>2018</date>
+    <genre>Adventure</genre>
+    <description>An animated superhero film about Miles Morales and multiple Spider-People from different dimensions.</description>
+    <animationStyle>2D Animation</animationStyle>
+    <animationStyle>3D Animation</animationStyle>
+    <duration>PT117M</duration>
+    <inLanguage>English</inLanguage>
+    <theme>Identity</theme>
+    <theme>Courage</theme>
+    <productionCompany>Sony Pictures Animation</productionCompany>
+    <isPartOf>Spider-Verse Series</isPartOf>
+
+</animationFilm>

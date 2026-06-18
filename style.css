@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans KR", sans-serif;
+  line-height: 1.65;
+  color: #202124;
+  background: #f6f3ee;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e293b, #334155);
+  color: white;
+  padding: 64px 0 36px;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  opacity: 0.78;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.subtitle {
+  max-width: 760px;
+  font-size: 1.15rem;
+  opacity: 0.88;
+  margin-top: 18px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.92rem;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  margin: 28px 0;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin-top: 0;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+h3 {
+  margin-top: 28px;
+  color: #1f2937;
+}
+
+h4 {
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px;
+  font-size: 0.94rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+th {
+  background: #f1f5f9;
+  text-align: left;
+}
+
+code {
+  font-family: Consolas, Monaco, monospace;
+}
+
+pre {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 20px;
+  border-radius: 14px;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.note {
+  background: #f8fafc;
+  border-left: 4px solid #64748b;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+
+.dictionary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.dictionary article,
+.vocab-grid div {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.button {
+  display: inline-block;
+  background: #1e293b;
+  color: white;
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.93rem;
+}
+
+.button.secondary {
+  background: #475569;
+}
+
+footer {
+  padding: 30px 0;
+  color: #64748b;
+  text-align: center;
+}

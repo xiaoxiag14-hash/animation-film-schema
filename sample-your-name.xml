@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<animationFilm
+    xmlns="http://example.org/animation-schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://example.org/animation-schema animation.xsd">
+
+    <title>Your Name.</title>
+    <director>Makoto Shinkai</director>
+    <date>2016</date>
+    <genre>Romance</genre>
+    <description>A story about body-swapping teenagers who are connected across time and space.</description>
+    <animationStyle>Anime</animationStyle>
+    <duration>PT106M</duration>
+    <inLanguage>Japanese</inLanguage>
+    <theme>Time Travel</theme>
+    <theme>Identity</theme>
+    <productionCompany>CoMix Wave Films</productionCompany>
+    <musicDirector>Radwimps</musicDirector>
+    <characterDesigner>Masayoshi Tanaka</characterDesigner>
+
+</animationFilm>

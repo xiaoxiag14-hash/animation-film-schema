@@ -1,0 +1,6 @@
+Validation Report
+=================
+
+sample-your-name.xml: VALID
+sample-spirited-away.xml: VALID
+sample-spider-verse.xml: VALID
